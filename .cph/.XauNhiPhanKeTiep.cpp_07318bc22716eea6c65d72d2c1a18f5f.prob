@@ -1,0 +1,1 @@
+{"name":"Local: XauNhiPhanKeTiep","url":"e:\\CTDL\\XauNhiPhanKeTiep.cpp","tests":[{"id":1740078081793,"input":"2\n010101\n111111","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CTDL\\XauNhiPhanKeTiep.cpp","group":"local","local":true}

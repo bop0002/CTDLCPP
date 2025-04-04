@@ -47,7 +47,6 @@ void Next()
             l++;r--;
         }
     }
-    
     else 
     {
         for(int j = 0;j<n;j++)

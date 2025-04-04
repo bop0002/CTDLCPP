@@ -1,56 +1,47 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool OK;
-vector<int> x;
-vector<string> y;
-int n, k;
-
-void Init() {
-    x.clear();
-    y.clear();
-    cin >> n >> k;
-    OK = true;
-
-    for (int i = 0; i < n; i++) {
-        string temp;
-        cin >> temp;
-        y.push_back(temp);
+int x[31];
+int n,k;
+set<string> st;
+vector<string> v;
+void Init()
+{
+    cin>>n>>k;
+    for(int i = 0;i<n;i++)
+    {
+        string s;
+        cin>>s;
+        st.insert(s);
     }
-
-    sort(y.begin(), y.end()); // Sắp xếp để đảm bảo thứ tự từ điển
-
-    for (int i = 0; i < k; i++) {
-        x.push_back(i);
-    }
+    v.assign(st.begin(),st.end());
+    n = v.size();
 }
 
-void Next() {
-    int i = k - 1;
-    while (i >= 0 && x[i] == n - k + i) {
-        i--;
+void Res()
+{
+    for(int i =1;i<=k;i++)
+    {
+        cout<<v[x[i]-1]<<" ";
     }
-    if (i >= 0) {
-        x[i]++;
-        for (int j = i + 1; j < k; j++) {
-            x[j] = x[j - 1] + 1;
+    cout<<endl;
+}
+void Try(int i)
+{
+    for(int j = x[i-1]+1;j<=n;j++)
+    {
+        x[i] = j;
+        if(i==k)
+        {
+            Res();
         }
-    } else {
-        OK = false;
+        else Try(i+1);
     }
 }
-
-void Res() {
-    for (int i = 0; i < k; i++) {
-        cout << y[x[i]] << " ";
-    }
-    cout << endl;
-}
-
 int main() {
     Init();
-    while (OK) {
-        Res();
-        Next();
-    }
+    x[0] = 0;
+    Try(1);
+
 }
+    

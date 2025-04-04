@@ -1,0 +1,1 @@
+{"name":"Local: TapConKeTiep","url":"e:\\CTDL\\TapConKeTiep.cpp","tests":[{"id":1740112095121,"input":"2\n5\n1 2 3 4 5\n5\n5 4 3 2 1\n\n\n ","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CTDL\\TapConKeTiep.cpp","group":"local","local":true}
